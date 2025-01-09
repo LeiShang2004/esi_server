@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ESI知识图谱平台 搜索</title>
+    <style>
+        /* 整体页面背景色 */
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* 标题样式 */
+        h1 {
+            color: #4285f4;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%; /* 调整卡片宽度为屏幕的60% */
+            padding: 15px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        /* 去除超链接默认的文本变色效果 */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* 空数据提示样式 */
+        .empty-message {
+            text-align: center;
+            color: #999;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 判断 papers 是否为空 -->
+<div th:if="${papers == null or papers.isEmpty()}">
+    <h1 class="empty-message">暂无数据</h1>
+</div>
+
+<!-- 如果 papers 不为空，则显示数据 -->
+<ul th:unless="${papers == null or papers.isEmpty()}">
+    <li th:each="paper : ${papers}">
+        <!-- 在h2标签内嵌套a标签，点击标题超链接可跳转到对应论文详情页 -->
+        <h2><a href="/expert/3" th:utext="${paper.ti}" target="_blank"></a></h2>
+        <!-- 在p标签内嵌套a标签，点击作者超链接可跳转到对应作者页面-->
+        <p><a href="/expert/2" th:utext="${paper.au}" target="_blank"></a></p>
+        <p th:utext="${paper.ab}"></p>
+    </li>
+</ul>
+</body>
+</html>

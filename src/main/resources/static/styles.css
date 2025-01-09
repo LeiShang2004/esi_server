@@ -1,0 +1,44 @@
+/* 整体页面背景色 */
+body {
+    background-color: #f4f4f4;
+}
+
+/* 标题样式 */
+h1 {
+    color: #4285f4;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%; /* 调整卡片宽度为屏幕的60% */
+    padding: 15px;
+}
+
+h2 {
+    /*color: #4285f4;*/
+    margin-top: 0;
+}
+
+p {
+    color: #666;
+    margin: 5px 0;
+}
+
+
+/* 去除超链接默认的文本变色效果 */
+a {
+    color: inherit;
+    text-decoration: none;
+}
