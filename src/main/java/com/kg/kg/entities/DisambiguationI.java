@@ -8,16 +8,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Disambiguation {
+public class DisambiguationI {
     // Disambiguation entity
-    @TableField(value = "author_id")
-    private Integer id;
+    @TableField(value = "author_ids")
+    private Integer[] Aids;
     @TableField(value = "all_names")
     private String[] name;
     @TableField(value = "affiliated_institution_names")
-    private String[] institutions;
+    private String[] institutionNames;
     @TableField(value = "affiliated_institution_ids")
-    private String[] affiliatedInstitutionIds;
+    private Integer institutionId;
     @TableField(value = "research_direction")
     private String[] sc;
     @TableField(value = "collaboration_papers")
@@ -28,8 +28,4 @@ public class Disambiguation {
     private String[] coauthor;
     @TableField(value = "collaborator_ids")
     private String[] collaborator_author_ids;
-    @TableField(value = "RI")
-    private String RI;
-    @TableField(value = "OI")
-    private String OI;
 }

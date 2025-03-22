@@ -1,6 +1,7 @@
 package com.kg.kg.controller;
 
 
+import com.kg.kg.entities.DisambiguationI;
 import com.kg.kg.service.DisambiguationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,27 +25,27 @@ public class DisambiguationController {
         return disambiguationService.selectTableByName(name);
     }
 
-    @GetMapping("/SC")
-    @ResponseBody
-    public CommonResponse<List<Disambiguation>> getDisambiguationSC(@RequestParam String sc) {
-        return disambiguationService.selectTableBySC(sc);
-    }
+//    @GetMapping("/SC")
+//    @ResponseBody
+//    public CommonResponse<List<Disambiguation>> getDisambiguationSC(@RequestParam String sc) {
+//        return disambiguationService.selectTableBySC(sc);
+//    }
 
     @GetMapping("/Institution")
     @ResponseBody
-    public CommonResponse<List<Disambiguation>> getDisambiguationInstitution(@RequestParam String institutionName) {
+    public CommonResponse<List<DisambiguationI>> getDisambiguationInstitution(@RequestParam String institutionName) {
         return disambiguationService.selectTableByInstitution(institutionName);
     }
 
-    @GetMapping("/RI")
-    @ResponseBody
-    public CommonResponse<List<Disambiguation>> getDisambiguationRI(@RequestParam String RI) {
-        return disambiguationService.selectTableByRI(RI);
-    }
-
-    @GetMapping("/OI")
-    @ResponseBody
-    public CommonResponse<List<Disambiguation>> getDisambiguationOI(@RequestParam String OI) {
-        return disambiguationService.selectTableByOI(OI);
-    }
+//    @GetMapping("/RI")
+//    @ResponseBody
+//    public CommonResponse<List<Disambiguation>> getDisambiguationRI(@RequestParam String RI) {
+//        return disambiguationService.selectTableByRI(RI);
+//    }
+//
+//    @GetMapping("/OI")
+//    @ResponseBody
+//    public CommonResponse<List<Disambiguation>> getDisambiguationOI(@RequestParam String OI) {
+//        return disambiguationService.selectTableByOI(OI);
+//    }
 }
